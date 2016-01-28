@@ -1,0 +1,58 @@
+<header class="page-row">
+    <nav class="navbar navbar-static-top navbar-mega">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <p class="navbar-text lead">
+                    <strong>Floor {{computers.buildings[0].floors[0].name}}</strong>
+                </p>
+            </div>
+
+
+            <div class="navbar-header navbar-right">
+                <p class="navbar-text lead">
+                    <strong>Available Computers:</strong>
+                </p>
+                <p class="navbar-text lead">
+                    {{computers.buildings[0].available.desktops}}
+                </p>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="wrap page-row page-row-expanded comp-signage-body">
+    <canvas id="asset_image" class="asset-image"></canvas>
+</div>
+<footer class="page-row">
+    <nav class="navbar navbar-static-bottom navbar-mega">
+        <div class="container-fluid">
+            <div class="nav navbar-nav">
+                <p class="navbar-text">
+                    <img src="ualib-computers-qr.jpg" style="height: 50px;"/>
+
+                </p>
+                <p class="navbar-text">
+                    For computer availability in all libraries<br> visit <a href="#">www.lib.ua.edu/computers</a>
+                </p>
+            </div>
+
+            <div class="nav navbar-nav navbar-right">
+                <p class="navbar-text lead">
+                    <strong>Apple:</strong>
+                </p>
+                <p class="navbar-text">
+                    <span class="apple available"></span> available<br> <span class="apple taken"></span> taken
+                </p>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <p class="navbar-text lead">
+                    <strong>Windows:</strong>
+                </p>
+                <p class="navbar-text">
+                    <span class="windows available"></span> available<br> <span class="windows taken"></span> taken
+                </p>
+            </div>
+
+        </div>
+    </nav>
+</footer>

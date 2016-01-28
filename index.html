@@ -1,0 +1,576 @@
+<!doctype html>
+<html class="no-js" ng-app="ualib" lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Apps Test Site | The University of Alabama Libraries</title>
+    <link rel='stylesheet' id='open-sans-css'  href='//fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;ver=4.1.1' type='text/css' media='all' />
+    <link rel='stylesheet'  href='//rawgit.com/ualibweb/roots-ualib/master/assets/css/main.css'/>
+    <link rel='stylesheet'  href='<%=pkg.name%>.css'/>
+</head>
+<body class="home page page-id-1046 page-template-default logged-in admin-bar no-customize-support" ng-class="appClass">
+
+<!--[if lt IE 8]>
+<div class="alert alert-warning">
+    You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.    </div>
+<![endif]-->
+
+<header role="banner">
+    <nav class="navbar navbar-static-top navbar-mega-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="https://wwwdev2.lib.ua.edu">
+                    <img src="https://wwwdev2.lib.ua.edu/wp-content/themes/roots-ualib/assets/img/ualib-logo-textonly-inverse.png" class="hidden-xs" rel="home" alt="University of Alabama Libraries"/>
+                    <span class="visible-xs">UA Libraries</span>
+                </a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle icon-only" title="My Accounts" ng-click="mainNavbarCollapsed = false;">
+                            <span class="fa fa-user"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <h2>My Accounts</h2>
+                                    <tabset  vertical="true" tab-class="col-sm-3" content-class="col-sm-9">
+                                        <tab heading="My Library (Catalog)">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">CWID</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Last Name</label>
+                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                                <select class="form-control">
+                                                    <option selected="" value="1@UADB20021202141309">University of Alabama Libraries</option>
+                                                    <option value="1@AUBDB20011120113530">Auburn University Libraries</option>
+                                                    <option value="1@AUMDB20011120113546">Auburn University Montgomery</option>
+                                                    <option value="1@JACKDB20020808100014">Houston Cole Library</option>
+                                                    <option value="1@UABDB20020817181349">Mervyn H. Sterne Library</option>
+                                                </select>
+                                                <button type="submit" class="btn btn-default">Login to Library Catalog</button>
+                                            </form>
+                                        </tab>
+                                        <tab heading="Interlibrary Loan (ILLiad)">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">User</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Password</label>
+                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Login to ILLiad</button>
+                                            </form>
+                                        </tab>
+                                        <tab heading="Refworks">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">User</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Password</label>
+                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Login to Refworks</button>
+                                            </form>
+                                        </tab>
+                                        <tab heading="Endnote">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Password</label>
+                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Login to Endnote</button>
+                                            </form>
+                                        </tab>
+                                        <tab heading="myBama">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">myBama User</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Password</label>
+                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Login to myBama</button>
+                                            </form>
+                                        </tab>
+                                        <tab heading="Blackboard Learn">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">myBama Id</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleInputPassword1">Password</label>
+                                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                </div>
+                                                <button type="submit" class="btn btn-default">Login to Blackboard Learn</button>
+                                            </form>
+                                        </tab>
+                                    </tabset>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-static dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle icon-only" ng-click="mainNavbarCollapsed = false;">
+                            <span class="fa fa-search"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content" ng-controller="OneSearchCtrl">
+                                    <!--<form action="/sample-page/onesearch/">
+                                        <div class="input-group input-group-lg">
+                                            <input type="text" name="search" class="form-control onesearch-text" placeholder="Search all library resources">
+                                            <div class="input-group-btn">
+                                                <button type="submit" class="btn btn-onesearch btn-primary"><span class="fa fa-search"></span></button>
+                                            </div>
+                                        </div>
+                                    </form>-->
+                                    <form ng-submit="search()">
+
+                                        <suggest-one-search prompt="Search all library resources" model="searchText" search="search">
+
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button type="button" class="dropdown-toggle navbar-toggle collapsed icon-only"ng-click="mainNavbarCollapsed = !mainNavbarCollapsed">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="fa fa-bars"></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" collapse="!mainNavbarCollapsed">
+                <ul class="nav navbar-nav navbar-right navbar-main">
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle">Research Tools</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/sample-page/search/">
+                                                <span class="fa fa-search"></span>
+                                                <h4>OneSearch</h4>
+                                                <p>Search everything the University Libraries’ offers from one place</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/scout/">
+                                                <span class="fa fa-binoculars"></span>
+                                                <h4>Scout</h4>
+                                                <p>Search for books, articles, and more</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/databases/">
+                                                <span class="fa fa-database"></span>
+                                                <h4>Databases</h4>
+                                                <p>Organized collections of articles, journals, and published materials</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/google-scholar/">
+                                                <span class="fa fa-google"></span>
+                                                <h4>Google Scholar</h4>
+                                                <p>Search for scholarly literature through a Google web search</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/subject-guides/">
+                                                <span class="fa fa-compass"></span>
+                                                <h4>Research Guides</h4>
+                                                <p>Explore subject and course specific resource in guides curated by UA librarians</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/e-resources/">
+                                                <span class="fa fa-bolt"></span>
+                                                <h4>Electronic Resources</h4>
+                                                <p>Explore the libraries' E-Book and E-Journal collections </p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="http://guides.lib.ua.edu/distance_learning">
+                                                <span class="fa fa-globe"></span>
+                                                <h4>Distance Education</h4>
+                                                <p>Information on research, writing, and key resources for distant learners</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/government-information/">
+                                                <span class="fa fa-university"></span>
+                                                <h4>Government Information, Statistics, and Data</h4>
+                                                <p>Explore our large collection of U.S. Federal documents</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/citation-finder/">
+                                                <span class="fa fa-quote-left"></span>
+                                                <h4>Citation Finder</h4>
+                                                <p>A quick tool to help you locate articles with citation information</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/libraries-and-collections/campus-libraries/music-library/music-library-search/">
+                                                <span class="fa fa-music"></span>
+                                                <h4>Music Library Search</h4>
+                                                <p>Thousands of music resources, including audio and video recordings</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="http://acumen.lib.ua.edu/home">
+                                                <span class="fa fa-search-plus"></span>
+                                                <h4>Digital Archives</h4>
+                                                <p>Access student research, digitized historical material, and more</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="http://refworks.ua.edu">
+                                                <span class="fa fa-folder"></span>
+                                                <h4>RefWorks</h4>
+                                                <p>Save citations, organize your research, and create bibliographies</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle">Using the Library</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <div class="service-list">
+                                                <span class="fa fa-desktop"></span>
+                                                <h4>Computers, Software, &amp; Equipment</h4>
+                                                <ul>
+                                                    <li><a href="https://wwwdev2.lib.ua.edu/services/photocopying/">Print, Scan, Copy</a></li>
+                                                    <li class="menu-computer-availability"><a href="https://wwwdev2.lib.ua.edu/services/computer-availability/computer-availability/">Computer Availability</a></li>
+                                                    <li class="menu-laptop-computers"><a href="https://wwwdev2.lib.ua.edu/services/computer-availability/laptop-computers/">Laptop Computers</a></li>
+                                                    <li class="menu-library-software-list"><a href="https://wwwdev2.lib.ua.edu/services/computer-availability/library-software-list/">Library Software List</a></li>
+
+                                                </ul>
+                                            </div>
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/circulation-services/">
+                                                <span class="fa fa-calendar"></span>
+                                                <h4>Borrow, Renew, and Course Reserves</h4>
+                                                <p>Checkout library resources and locate instructor provided materials for your courses</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-9">
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/find-a-place-to-study/">
+                                                        <span class="fa fa-exchange"></span>
+                                                        <h4>Interlibrary Borrowing</h4>
+                                                        <p>Borrow materials owned by other libraries</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/sanford-media-center/">
+                                                        <span class="fa fa-cubes"></span>
+                                                        <h4>Sanford Media Center</h4>
+                                                        <p>A leading-edge facility for digital media production </p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/digital-humanities-center/">
+                                                        <span class="fa fa-tachometer"></span>
+                                                        <h4>Digital Humanities Center</h4>
+                                                        <p>Explore and create innovative research and teaching projects</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href=" https://wwwdev2.lib.ua.edu/services/find-a-place-to-study/">
+                                                        <span class="fa fa-book"></span>
+                                                        <h4>Find a Place to Study</h4>
+                                                        <p>Find the best spaces to study at libraries, listed by noise level </p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/practice-presentation-rooms/">
+                                                        <span class="fa fa-area-chart"></span>
+                                                        <h4>Practice Presentation Rooms</h4>
+                                                        <p>Facilities and equipment to help you prepare for presentations </p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/library-instruction/">
+                                                        <span class="fa fa-calendar"></span>
+                                                        <h4>Classes, Workshops, Tours</h4>
+                                                        <p>Register for instruction sessions and tours of our libraries</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/disability-services/">
+                                                        <span class="fa fa-wheelchair"></span>
+                                                        <h4>Disability Services</h4>
+                                                        <p>Accommodations for library users with disabilities</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/information-for-faculty/">
+                                                        <span class="fa fa-graduation-cap"></span>
+                                                        <h4>Information for Faculty</h4>
+                                                        <p>Purchases, teaching and research support</p>
+                                                    </a>
+                                                </div>
+                                                <div class="col-sm-12 col-md-4">
+                                                    <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/library-information-for-current-students/">
+                                                        <span class="fa fa-pencil"></span>
+                                                        <h4>Information for Students</h4>
+                                                        <p>Learn more about the libraries, materials, and our services</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle">About</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/sample-page/hours/">
+                                                <span class="fa fa-clock-o"></span>
+                                                <h4>Hours</h4>
+                                                <p>Library hours and locations</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/services/library-information-for-current-students/about-the-libraries/">
+                                                <span class="fa fa-university"></span>
+                                                <h4>About the Libraries</h4>
+                                                <p>Information about each of our branch libraries</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/about-ua-libraries/library-annex/">
+                                                <span class="fa fa-building"></span>
+                                                <h4>Library Annex</h4>
+                                                <p>Supplemental library collections located off campus</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/about-ua-libraries/libraries-policies/">
+                                                <span class="fa fa-sitemap"></span>
+                                                <h4>Policies</h4>
+                                                <p>Learn about libraries' policies and procedures</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/about-ua-libraries/social-media/">
+                                                <span class="fa fa-users"></span>
+                                                <h4>Social Media</h4>
+                                                <p>Explore the libraries' multiple social media outlets </p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/about-ua-libraries/support-ua-libraries/">
+                                                <span class="fa fa-gift"></span>
+                                                <h4>Support UA Libraries</h4>
+                                                <p>Help strengthen the libraries' collections, services, and resources </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown yamm-fw">
+                        <a href="#" class="dropdown-toggle">Library Help</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="yamm-content">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/library-help/how-do-i/">
+                                                <span class="fa fa-question-circle"></span>
+                                                <h4>How Do I...</h4>
+                                                <p>Frequently asked questions at the libraries</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/subject-specialists/">
+                                                <span class="fa fa-comments"></span>
+                                                <h4>Subject Specialists</h4>
+                                                <p>Need research help? Reach out to your subject specialist</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/research-help/tutorials/">
+                                                <span class="fa fa-magic"></span>
+                                                <h4>Tutorials and Instructional Videos</h4>
+                                                <p>Brief tutorials designed to help you use library services and resources</p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/library-help/connect-to-a-wireless-network/">
+                                                <span class="fa fa-wifi"></span>
+                                                <h4>Connect to a Wireless Network</h4>
+                                                <p>Access the Libraries' internet using a wireless connection</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/library-help/report-a-login-problem/">
+                                                <span class="fa fa-sign-in"></span>
+                                                <h4>Report a Login Problem</h4>
+                                                <p>Contact the libraries with problems accessing our online resources </p>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a class="service-card" href="https://wwwdev2.lib.ua.edu/library-help/kacecontact-form/">
+                                                <span class="fa fa-envelope"></span>
+                                                <h4>Run into Issues?</h4>
+                                                <p>Please contact Web Services for assistance </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<div class="wrap">
+    <div class="container" role="document">
+        <div class="content row">
+            <main class="main" role="main">
+                <div ng-class="{'one-search-results': appClass == 'bento'}" ng-view></div>
+            </main><!-- /.main -->
+        </div><!-- /.content -->
+    </div><!-- /.wrap -->
+</div>
+
+<footer class="content-info" role="contentinfo">
+    <div class="footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-list">
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/contact-us/">University Libraries’ Maps and Contact Information</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/libraries-policies/access-to-and-usage-of-electronic-resources/">Access to and Usage of Electronic Resources</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/services/disability-services/physical-access/">Physical Access</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/libraries-policies/">Libraries' Policies</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/privacy-and-cookies/">Privacy and Cookies</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/site-map/">Site Map</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/copyright-statement/">Copyright Statement</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/about-ua-libraries/support-ua-libraries/">Support UA Libraries</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-4">
+                    <h4>Libraries &amp; Collections</h4>
+                    <ul class="footer-list">
+                        <li><a href="https://wwwdev2.lib.ua.edu/services/information-for-faculty/distance-education-faculty/gorgas-library/">Gorgas Library</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/services/information-for-faculty/distance-education-faculty/rodgers-library-for-science-engineering/">Rodgers Library for Science &amp; Engineering</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/libraries-and-collections/campus-libraries/music-library/">Music Library</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/libraries-and-collections/collections/a-s-williams-collection/">A.S. Williams Collection</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/services/sanford-media-center/">Sanford Media Center</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/libraries-and-collections/campus-libraries/map-library-place-names-research-center/">Map Library &amp; Place Names Research Center</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/libraries-and-collections/campus-libraries/hoole-library/">Hoole Library</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/libraries-and-collections/campus-libraries/health-sciences-library/">Health Sciences Library</a></li>
+                        <li><a href="https://wwwdev2.lib.ua.edu/libraries-and-collections/campus-libraries/bounds-law-library/">Bounds Law Library</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-4">
+                    <ul class="nav nav-pills nav-justified social-icons">
+                        <li><a href="http://www.twitter.com"><span class="fa fa-fw fa-2x fa-twitter"></span></a></li>
+                        <li><a href="http://www.instagram.com"><span class="fa fa-fw fa-2x fa-instagram"></span></a></li>
+                        <li><a href="http://www.facebook.com"><span class="fa fa-fw fa-2x fa-facebook"></span></a></li>
+                        <li><a href="http://www.youtube.com/"><span class="fa fa-fw fa-2x fa-youtube"></span></a></li>
+                    </ul>
+
+                    <a href="http://www.ua.edu">
+                        <img src="https://wwwdev2.lib.ua.edu/wp-content/themes/roots-ualib/assets/img/ua-capstone-logo.png" class="img-responsive" style="margin: 15px 0;"/>
+                    </a>
+
+                    <div class="row">
+                        <div class="col-md-6 col-md-push-6">
+                            <a href="http://www.fdlp.gov/">
+                                <img src="https://wwwdev2.lib.ua.edu/wp-content/themes/roots-ualib/assets/img/fdlp_logo.png" class="img-responsive"/>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-md-pull-6">
+                            <a href="http://www.hathitrust.org/" target="_hatti" class="text-right">
+                                <img src="https://wwwdev2.lib.ua.edu/wp-content/themes/roots-ualib/assets/img/HT-logo.png" class="img-responsive" />
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-footer">
+        <div class="container">
+            University Libraries • Box 870266 • Tuscaloosa, AL 35487-0266 • (205) 348-6047
+        </div>
+    </div>
+</footer>
+<!-- bower:js -->
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/modernizr/modernizr.js"></script>
+<script src="../bower_components/respond/dest/respond.src.js"></script>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-route/angular-route.js"></script>
+<script src="../bower_components/angular-resource/angular-resource.js"></script>
+<script src="../bower_components/angular-animate/angular-animate.js"></script>
+<script src="../bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="../bower_components/angular-filter/dist/angular-filter.js"></script>
+<!-- endbower -->
+
+<script type='text/javascript' src='ualib-peer.js'></script>
+<script type='text/javascript' src='<%=pkg.name%>-templates.js'></script>
+<script type='text/javascript' src='<%=pkg.name%>.js'></script>
+
+
+</body>
+</html>

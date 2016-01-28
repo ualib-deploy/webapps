@@ -1,0 +1,46 @@
+{
+  "name": "ualib-webapps",
+  "version": "0.0.0",
+  "license": "ECL-2.0",
+  "private": true,
+  "main": [
+    "dist/ualib-webapps-templates.js",
+    "dist/ualib-webapps.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "ualib-ui": "https://github.com/ualibweb/ui-components.git",
+    "onesearch": "https://github.com/ualibweb/oneSearch_ui.git",
+    "ualib-hours": "https://github.com/ualibweb/hours_ui.git",
+    "manage": "https://github.com/ualibweb/manage_ui.git",
+    "databases": "https://github.com/ualibweb/databases_ui.git",
+    "musicSearch": "https://github.com/ualibweb/musicSearch_ui.git",
+    "ualib_staffdir": "https://github.com/ualibweb/staffdir_ui.git",
+    "ualib-softwareList": "https://github.com/ualibweb/softwareList_ui.git",
+    "ualib-news": "https://github.com/ualibweb/news_ui.git"
+  },
+  "devDependencies":{
+    "modernizr": "2.8.2",
+    "jquery": "1.11.1",
+    "bootstrap": "3.3.2",
+    "respond": "1.4.2",
+    "fontawesome": "~4.3.0",
+    "angular": ">=1 <1.3.0",
+    "angular-route": ">=1 <1.3.0",
+    "angular-resource": ">=1 <1.3.0",
+    "angular-animate": ">=1 <1.3.0",
+    "angular-sanitize": ">=1 <1.3.0",
+    "angular-filter": "~0.5.4",
+    "yamm3": "https://github.com/geedmo/yamm3.git#~1.0.0"
+  },
+  "resolutions": {
+    "angular": ">=1 <1.3.0",
+    "angular-route": ">=1 <1.3.0",
+    "angular-resource": ">=1 <1.3.0",
+    "angular-animate": ">=1 <1.3.0",
+    "angular-sanitize": ">=1 <1.3.0"
+  }
+}
