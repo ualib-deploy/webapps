@@ -151,7 +151,7 @@ angular.module('ualib.computers.factory', [])
         function getTotalAvail(array, prop){
             prop = angular.isUndefined(prop) ? 'desktops' : prop;
             return array.filter(function(item){
-                return prop === 'desktops' ? item.status === 1 : item.available === 0;
+                return prop === 'desktops' ? item.status === 3 : item.available === 0;
             }).length;
         }
 
@@ -462,7 +462,7 @@ angular.module('ualib.computers.maps', [])
                     var y = parseInt(comp.coordinates.y)-5;
 
                     self.ctx.save();
-                    if (comp.status !== 1){
+                    if (comp.status !== 3){
                         self.ctx.fillStyle = styles.desktops.taken.color;
                     }
 

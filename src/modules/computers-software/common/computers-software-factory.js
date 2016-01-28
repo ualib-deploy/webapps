@@ -6,7 +6,7 @@ angular.module('ualib.computers.factory', [])
         function getTotalAvail(array, prop){
             prop = angular.isUndefined(prop) ? 'desktops' : prop;
             return array.filter(function(item){
-                return prop === 'desktops' ? item.status === 1 : item.available === 0;
+                return prop === 'desktops' ? item.status === 3 : item.available === 0;
             }).length;
         }
 

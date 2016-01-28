@@ -171,7 +171,7 @@ angular.module('ualib.computers.maps', [])
                     var y = parseInt(comp.coordinates.y)-5;
 
                     self.ctx.save();
-                    if (comp.status !== 1){
+                    if (comp.status !== 3){
                         self.ctx.fillStyle = styles.desktops.taken.color;
                     }
 
