@@ -1,15 +1,15 @@
 {
-  "name": "ualib-webapps",
+  "name": "webapps",
   "version": "0.0.0",
   "description": "Central Angular application to load other UA Libraries' web apps as modules",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ualibweb/ualib-webapps.git"
+    "url": "https://github.com/ualibweb/webapps.git"
   },
   "author": "Will Jones",
   "license": "ECL-2.0",
   "bugs": {
-    "url": "https://github.com/ualibweb/ualib-webapps/issues"
+    "url": "https://github.com/ualibweb/webapps/issues"
   },
   "devDependencies": {
     "bower": ">=1.3.12",
