@@ -63,15 +63,17 @@ angular.module('ualib.computers.signage', [
                  height: scope.computers.buildings[0].floors[0].image.height,
                  scalar: scalar,
                  yOffset: yOffset
-                 });
-
-                angular.element($window).bind('resize', function(){
-                    $maps.resizeCanvas();
-                    $maps.setScale();
-                    $maps.resizeImage();
-                    $maps.posImage();
-                    $maps.draw();
+                 }).then(function(){
+                    angular.element($window).bind('resize', function(){
+                        $maps.resizeCanvas();
+                        $maps.setScale();
+                        $maps.resizeImage();
+                        $maps.posImage();
+                        $maps.draw();
+                    });
                 });
+
+
 
                 scope.$on('$destroy', function(){
                     angular.element($window).unbind('resize');
